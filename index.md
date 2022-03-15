@@ -4,7 +4,7 @@
 
 ## Projects
 
-[Sonarqube module checker](/sonarqube-module-checker)
+[Sonarqube module checker](https://github.com/dilansalinda/sonarqube-module-checker/blob/master/README.md)
 <img src="images/sonarqube-module-checker.png?raw=true"/>
 
 ---
