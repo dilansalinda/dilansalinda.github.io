@@ -8,11 +8,11 @@
 <img src="images/sonarqube-module-checker.png?raw=true"/>
 
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+[JavaBrackets](/pdf/sample_presentation.pdf)
+<img src="images/java_brackets.png?raw=true"/>
 
 ---
-[Project 3 Title](http://example.com/)
+[BallerinaFaceBookWishesApp ](https://github.com/dilansalinda/BallerinaFaceBookWishesApp)
 <img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
