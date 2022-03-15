@@ -3,8 +3,6 @@ logo: "/images/Dilan Salinda.jpg?raw=true" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
   Engineer
   <br><br>
-  Second description 
-  <br><br>
   <a href="https://www.linkedin.com/in/dilan-salinda/">View My LinkedIn Profile</a> 
   
 theme: jekyll-theme-minimal
