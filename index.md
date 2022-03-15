@@ -1,8 +1,8 @@
-## Portfolio
+# Portfolio
 
 ---
 
-### Dilan
+## Projects
 
 [Sonarqube module checker](/sonarqube-module-checker)
 <img src="images/sonarqube-module-checker.png?raw=true"/>
