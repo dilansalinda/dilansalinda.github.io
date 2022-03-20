@@ -1,7 +1,8 @@
 [![](images/home.png)](https://dilansalinda.github.io) 
 
 ___
-An h1 header
+
+h1 header
 ============
 
 Paragraphs are separated by a blank line.
