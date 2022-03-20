@@ -1,4 +1,4 @@
-[![](images/home.png)](https://dilansalinda.github.io)
+[![](https://img.icons8.com/material-rounded/2/4a90e2/google-home.png)](https://dilansalinda.github.io)
 
 An h1 header
 ============
