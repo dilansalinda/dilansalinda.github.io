@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://dilansalinda.github.io/sitemap-index.xml
-Host: https://dilansalinda.github.io
