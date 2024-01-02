@@ -59,6 +59,12 @@ const Head = ({ title, description, image }) => {
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.image} />
 
+      <meta name="description" content="2024 Portfolio"/>
+      <meta property="og:title" content="Home - Dilan Salinda"/>
+      <meta property="og:description" content="2024 Dilan Salinda Portfolio"/>
+      <meta property="keywords" content="Dilan, Salinda, Software Engineer, Senior Sofware Engineer, Lead, Portfolio"/>
+      <meta property="og:url" content="https://dilansalinda.github.com/"/>
+
       <meta name="google-site-verification" content="xLFluXsIC6OLcspMEO1YgLREv6rWRKUhBbGCnOaR9xg" />
     </Helmet>
   );
