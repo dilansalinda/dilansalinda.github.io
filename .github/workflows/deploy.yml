@@ -22,6 +22,10 @@ jobs:
         id: yarn-cache-dir-path
         run: echo "::set-output name=dir::$(yarn cache dir)"
 
+      - name: React-typed installing 🔓
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm install react-typed --legacy-peer-deps
+        
       - name: Cache Dependencies 🔒 # To cache yarn dependencies
         uses: actions/cache@v3
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
