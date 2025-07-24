@@ -26,12 +26,12 @@ jobs:
         with:
           folder: dist/browser
           branch: deploy
-          token: ${{ secrets.TOKEN }}
+          token: ${{ secrets.GH_token }}
 
       - name: Delete old workflow runs
         uses: Mattraks/delete-workflow-runs@v2
         with:
-          token: ${{ secrets.TOKEN }}
-          repository: dilansalinda/dilansalinda
+          token: ${{ secrets.GH_token }}
+          repository: dilansalinda/dilansalinda.github.io
           retain_days: 10
           keep_minimum_runs: 5
