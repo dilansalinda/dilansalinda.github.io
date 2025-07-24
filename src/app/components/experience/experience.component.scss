@@ -1,0 +1,223 @@
+.experience-section {
+  padding: 4rem 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  overflow: hidden;
+
+  .timeline {
+    position: relative;
+    margin-left: 2rem;
+    border-left: 4px solid var(--accent-color);
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+
+      &.active {
+        background-color: rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+      }
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.03);
+      }
+
+      .timeline-marker {
+        position: absolute;
+        left: -10px;
+        top: 0;
+        width: 18px;
+        height: 18px;
+        background-color: var(--accent-color);
+        border: 3px solid var(--bg-color);
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+
+        .timeline-item.active & {
+          transform: scale(1.2);
+        }
+      }
+
+      .timeline-content {
+        .company-header {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          .company-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 4px;
+          }
+
+          h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+          }
+
+          .duration {
+            display: block;
+            font-size: 0.9rem;
+            color: gray;
+            margin-top: 0.2rem;
+          }
+
+          i.fas {
+            margin-left: auto;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+          }
+        }
+
+        .achievements {
+          list-style-type: disc;
+          margin-left: 1.5rem;
+          margin-top: 0.5rem;
+          padding: 0;
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+
+          .timeline-item.active & {
+            max-height: 200px; // Adjust based on content length
+          }
+
+          li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+            color: var(--text-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.company-header {
+  padding: 16px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+
+  &:active {
+    transform: scale(0.98); // Slight press effect
+  }
+}
+
+.company-logo {
+  transition: all 0.3s ease;
+}
+
+.timeline-item:hover .company-logo {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+
+.experience-section {
+  .achievements {
+    list-style-type: none;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+      opacity 0.4s ease-out,
+      padding 0.4s ease-out;
+
+    &.expanded {
+      max-height: 500px !important;
+      opacity: 1;
+      padding: 16px 0;
+    }
+  }
+
+  // Animate the chevron icon
+  .fas {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.fa-chevron-down {
+      transform: rotate(0deg);
+    }
+
+    &.fa-chevron-up {
+      transform: rotate(180deg);
+    }
+  }
+
+  // Add hover effects
+  .timeline-item {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+      transform: translateX(8px);
+
+      .company-header {
+        // background-color: rgba(99, 136, 122, 0.509);
+      }
+    }
+  }
+
+  // Animate list items
+  .achievements ul li {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    transition-delay: 0.1s; // Stagger the animation
+    padding-left: 1rem;
+
+    &:nth-child(1) {
+      transition-delay: 0.1s;
+    }
+
+    &:nth-child(2) {
+      transition-delay: 0.15s;
+    }
+
+    &:nth-child(3) {
+      transition-delay: 0.2s;
+    }
+
+    &:nth-child(4) {
+      transition-delay: 0.25s;
+    }
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    position: relative;
+    padding-left: 1rem; // Space for custom bullet
+
+    &::before {
+      content: "•"; // Bullet character
+      color: var(--accent-color); // Match your accent color
+      font-size: 1.2rem; // Slightly larger for emphasis
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+
+  .achievements.expanded ul li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

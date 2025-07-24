@@ -1,0 +1,17 @@
+$navbar-height: 60px;
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --accent-color: #3f51b5;
+  --navbar-bg: #ffffff; // Default for light mode
+  --navbar-text: #000000; // Default for light mode
+}
+
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #f0f0f0;
+  --accent-color: #90caf9;
+  --navbar-bg: #1a1a1a; // Dark mode navbar background
+  --navbar-text: #f1f1f1; // Dark mode navbar text
+}
