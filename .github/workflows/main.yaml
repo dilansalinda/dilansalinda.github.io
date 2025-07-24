@@ -1,27 +1,37 @@
-name: Build and Deploy Script
+name: Angular Build and Deploy
+
 on:
   push:
     branches:
-      - main
+      - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-    - name: Adding Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16
-    - name: Install Dependencies
-      run: npm install
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Build Angular App
-      run: npm run build
-    - name: Deploy to gh pages
-      run: |
-        npx angular-cli-ghpages --dir=dist/your-angular-app
-      env:
-        CI: true
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build Angular app to prod
+        working-directory: .
+        run: npm install && npm run build:prod
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/browser
+          branch: deploy
+          token: ${{ secrets.TOKEN }}
+
+      - name: Delete old workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          token: ${{ secrets.TOKEN }}
+          repository: dilansalinda/dilansalinda
+          retain_days: 10
+          keep_minimum_runs: 5
