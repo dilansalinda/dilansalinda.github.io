@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "homepage": "https://dilansalinda.github.io/",
   "scripts": {
-    "deploy": "gh-pages -d build --dir=dist/browser",
+    "deploy": "gh-pages -d dist",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build -c production --base-href https://github.com/dilansalinda/dilansalinda.github.io",
