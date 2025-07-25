@@ -29,9 +29,11 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
 
-    - name: Deploy with gh-pages
+    - name: 'Deploy'
+      if: github.event_name != 'pull_request'
       run: |
-        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-        npm run deploy
-        env: 
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/RehanSaeed/rehansaeed.github.io.git
+        npx gh-pages --branch master --dist dist --user "github-actions-bot <support+actions@github.com>"
+      shell: bash
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
