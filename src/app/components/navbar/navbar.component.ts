@@ -9,6 +9,7 @@ import { DarkModeService } from '../../services/dark-mode.service';
 })
 export class NavbarComponent implements OnInit {
   isDarkMode = false;
+  menuOpen = false;
 
   ngOnInit(): void {
     this.isDarkMode = localStorage.getItem('darkMode') === 'true';
@@ -29,10 +30,19 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu(): void {
+    this.menuOpen = false;
+  }
+
   scrollToSection(sectionId: string): void {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    this.closeMenu(); // Close menu on mobile after navigation
   }
 }

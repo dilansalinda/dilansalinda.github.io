@@ -907,3 +907,56 @@
     font-size: 0.75rem;
   }
 }
+
+@media (max-width: 600px) {
+  .about-container {
+    padding: 2rem 0.5rem !important;
+    max-width: 100vw !important;
+  }
+  .role-container {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    padding: 0.5rem 0 !important;
+  }
+  .stats-grid, .content-grid, .activities-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .stats-grid > *, .content-grid > *, .activities-grid > * {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  .tech-slider-container {
+    padding: 0.5rem 0 !important;
+    width: 100% !important;
+  }
+  h1, h2, h3, h4 {
+    font-size: 1.2rem !important;
+    line-height: 1.3 !important;
+  }
+  p, li, span, a {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+  .btn-arrow {
+    font-size: 1.2rem !important;
+    padding: 0.5rem 1rem !important;
+  }
+  img, svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  [class*="col-"], [class*="grid-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+  // Remove large margins and paddings
+  * {
+    margin: 0.5rem 0 !important;
+    padding: 0.5rem 0 !important;
+  }
+}
