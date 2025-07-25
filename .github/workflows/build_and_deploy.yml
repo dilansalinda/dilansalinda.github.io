@@ -29,11 +29,10 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
 
-    - name: 'Deploy'
-      if: github.event_name != 'pull_request'
+    - name: "Github Pages Deployment"
       run: |
-        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/RehanSaeed/rehansaeed.github.io.git
-        npx gh-pages --branch master --dist dist --user "github-actions-bot <support+actions@github.com>"
-      shell: bash
+        git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        yarn deploy -u "github-actions-bot <support+actions@github.com>"
+      if: ${{ github.ref == 'refs/heads/master' }} # only deploy master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
