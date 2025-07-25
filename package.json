@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "homepage": "https://dilansalinda.github.io/",
   "scripts": {
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist --branch=gh-pages --message='Deploying to GitHub Pages'",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
