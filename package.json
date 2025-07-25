@@ -4,6 +4,7 @@
   "homepage": "https://dilansalinda.github.io/",
   "scripts": {
     "ng": "ng",
+    "deploy": "gh-pages -d dist/browser",
     "start": "ng serve",
     "build": "ng build --base-href https://dilansalinda.github.io/",
     "watch": "ng build --watch --configuration development",
