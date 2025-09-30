@@ -192,6 +192,8 @@
         /* THEME SWITCH                  */
         /* ============================= */
         .theme-switch {
+            margin-left: auto;
+            margin-right: 1rem;
             display: flex;
             align-items: center;
         }
@@ -1056,8 +1058,11 @@
             }
 
             .hero-photo {
-                min-width: 100%;
-                scroll-snap-align: start;
+                object-fit: cover;
+                object-position: left center;
+                /* focus on left side of image */
+                width: 100%;
+                height: auto;
             }
 
             .hero-text {
@@ -1067,7 +1072,10 @@
                 left: 1.5rem;
                 right: 1.5rem;
                 transform: none;
-                max-width: calc(100% - 3rem);
+                margin-top: 1rem;
+                padding: 0 1rem;
+                text-align: left !important;
+                max-width: 100%;
             }
 
             .hero-greeting {
@@ -1076,13 +1084,17 @@
             }
 
             .hero-title {
-                font-size: 2rem;
-                margin-bottom: 1rem;
+                font-size: 1.8rem;
+                margin-bottom: 0.75rem;
             }
 
             .hero-subtitle {
-                font-size: 0.95rem;
+                font-size: 1rem;
                 line-height: 1.6;
+                margin-bottom: 1rem;
+                white-space: normal;
+                overflow: visible;
+                max-width: 50%;
             }
 
             .hero-badges {
@@ -1100,6 +1112,7 @@
                 width: 100px;
                 height: 100px;
                 border-width: 3px;
+                margin-right: 10%;
             }
 
             .hero-badges-list {
@@ -1138,6 +1151,16 @@
 
             .experience-item ul {
                 padding-left: 2rem;
+            }
+
+            .theme-switch {
+                order: 1;
+                /* appears before hamburger */
+                margin-right: 0.5rem;
+            }
+
+            .mobile-menu-toggle {
+                order: 2;
             }
         }
 
@@ -1277,6 +1300,12 @@
     <nav class="navigation">
         <div class="nav-container">
             <div class="nav-logo">Dilan Salinda</div>
+            <div class="theme-switch">
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
+                    <span class="slider"></span>
+                </label>
+            </div>
             <button class="mobile-menu-toggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
@@ -1288,12 +1317,6 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#work">Work</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li class="theme-switch">
-                    <label class="switch">
-                        <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode">
-                        <span class="slider"></span>
-                    </label>
-                </li>
             </ul>
         </div>
     </nav>
@@ -1301,7 +1324,7 @@
     <header id="home" class="hero">
         <div class="hero-content">
             <div class="hero-photo-container">
-                <img src="assets/images/photo2.jpg" alt="Dilan Salinda - Software Engineer, Traveler, and Photographer"
+                <img src="assets/images/photo2.jpeg" alt="Dilan Salinda - Software Engineer, Traveler, and Photographer"
                     class="hero-photo">
 
                 <div class="hero-text">
